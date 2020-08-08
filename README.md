@@ -6,15 +6,17 @@
     1. create folder to put the tools in that you will simultaneously be using to build and store your blockchain 
     1. Geth = Command line interface to run Ethereum nodes 
 
-# Creating the Genesis Block: 
+# Create Nodes: 
 1. Navigate to folder created including Go Ethereum Tools 
 1. Create 2+ node accounts using geth with datadir
   1. [./geth new account --datadir NODE_NAMEn]
       1. --datadir = data directory: understands and manages the files
       1. creating a new account in Go Ethereum format, uses the data directory to properly form and store the node created
-1. n = amount of nodes used in the blockchain 
-    1. run commands for each 
+    1. n = amount of nodes used in the blockchain (at least two for functionality)
+1. Run commands for however many nodes you want to use for the blockchain
 1. Set passwords for the individual nodes with the prompt (used later to pull keystore file into MyCrypto)
+
+# Create Genesis Block Using ./puppeth
 1. Run [./puppeth] 
     1. Tool from geth to ease the functionality of blockchain creation and use 
     1. Guides user through the process rather than having them do everything on their own 
@@ -72,12 +74,32 @@
 
 
 # Open MyCrypto
-1. Create custom node 
-1. Custom 
-1. Set network to custom network
+1. MyCrypto is an open-source interface for blockchain where users can interact with their funds via private keys and networks. 
+1. MyCrypto supports various Ethereum-like blockchain networks with similar structure. Various testnets allow you to test applications without risking real funds. 
+1. Being able to utilize your own personal nodes allows you to control the blockchain process maintaining the decentralized nature of Ethereum. 
+1. 
+
+### Create Custom Node
+1. Click "Change Network" on the bottom of the left hand column. Scroll to bottom of Network list and then click "+Add Custom Node"
+1. Name your node and select "Custom" at the bottom of the 'Network' list. 
+![Create custom network](readme_png/custom_net.png)
+1. Name your network, select currency, and set 'Chain ID'. 
+    1. The network name and Chain ID will be the same information that you set using ./puppeth in terminal
+1. URL = http://127.0.0.1:8545
+1. 'Save and Use Custom Node'
+
+### Open Wallet Using Keystore File
 1. Open wallet using keystore file 
-  1. navigate to folder with geth commands, then into appropriate node folder 
-1. Enter unopened node's address into the address box to send ETH
+    ![Home Keystore Open Block](readme_png/home_keystore.png)
+    1. Click 'Select Wallet File'
+    1. navigate to folder with geth commands, then into appropriate node folder 
+    ![Open Keystore File](readme_png/open_keystore.png)
+    1. Enter password you set in terminal when creating the node
+1. Enter unopened node's address into the address box you want to send ETH to. 
 1. Set transaction amount/fee 
 1. Send Transaction 
+![Initial Confirmation](readme_png/confirmation.png)
+![Final Confirmation](readme_png/final_confirmation.png)
+
+## Congrats you have created your own private blockchain! 
 
